@@ -58,4 +58,35 @@ List APT sources.
 ```
 ls /etc/apt/sources.list.d/*
 ```
-See `man sources.list` for working with source-files directly.
+See `man sources.list` for working with sources as files.
+
+### Packages
+
+```
+apt search --names-only `^neovim$`
+
+neovim/noble,now 0.9.5-6ubuntu2 amd64 [installed]
+```
+Find a package. See `man 8 apt-cache` and `man 7 regex`.
+
+```
+apt install neovim
+```
+Install a package
+```
+apt install neovim emacs
+```
+Install many packages
+```
+apt reinstall neovim
+```
+Re-install a package
+
+```
+apt remove neovim
+```
+Remove a package, but can leave some files.
+```
+apt purge neovim
+```
+Purge system of all files that belongs to a package.
