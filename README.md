@@ -19,6 +19,14 @@ apt update
 ```
 Download package information from all configured sources.
 ```
+apt list --installed
+```
+List installed packages.
+```
+apt list --upgradable
+```
+List packages that can be upgraded.
+```
 apt upgrade
 ```
 Install available upgrades of all packages installed.
@@ -30,6 +38,7 @@ Install upgrades and also remove installed packages if needed to upgrade system.
 apt autoremove
 ```
 Remove packages that are no longer needed.
+
 
 ### Sources
 To install a package from a source that is maintained by a third-party, your first need to add that source.
@@ -68,15 +77,14 @@ apt search --names-only `^neovim$`
 neovim/noble,now 0.9.5-6ubuntu2 amd64 [installed]
 ```
 Find a package. See `man 8 apt-cache` and `man 7 regex`.
-
+```
+apt show neovim
+```
+Show package information.
 ```
 apt install neovim
 ```
-Install a package
-```
-apt install neovim emacs
-```
-Install many packages
+Install a package (or many)
 ```
 apt reinstall neovim
 ```
@@ -91,11 +99,12 @@ apt purge neovim
 ```
 Purge system of all files that belongs to a package.
 
-### Common packages
 
-List of common packages that you might want or need to install.
+### Packages from `.deb` files
+
+Some packages are distributed as `.deb` files.
 
 ```
-apt install build-essential
+apt install --fix-broken ./downloads/remarkable_1.95.deb 
 ```
-Meta package, contains common tools (like `gcc`) needed to compile and build stuff.
+Install package and dependencies.
