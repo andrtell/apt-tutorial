@@ -90,3 +90,12 @@ Remove a package, but can leave some files.
 apt purge neovim
 ```
 Purge system of all files that belongs to a package.
+
+### Common packages
+
+List of common packages that you might want or need to install.
+
+```
+apt install build-essential
+```
+Meta package, contains common tools (like `gcc`) needed to compile and build stuff.
